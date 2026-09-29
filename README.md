@@ -6,7 +6,7 @@ Upload a scan or photo of an ID or form, read it with on-device OCR (English, Hi
 
 ## Current status
 This is an early prototype.
-- Working: local OCR (open-source EasyOCR), rule-based field extraction (date of birth, masked 12-digit ID, phone, PIN code), JSON export, and a check for the ONNX Runtime QNN (NPU) provider.
+- Working: local OCR (open-source EasyOCR), rule-based field extraction (date of birth, masked 12-digit ID, phone, PIN code), an editable autofill form with JSON export, per-line confidence scores, a read-time readout, and a check for the ONNX Runtime QNN (NPU) provider.
 - Not yet done: exporting the OCR models to ONNX, quantizing them for the Hexagon NPU, and measuring CPU vs NPU performance on Snapdragon hardware. The prototype currently runs on CPU.
 
 ## Why the design targets Snapdragon PCs
@@ -35,6 +35,7 @@ These are goals. Measured results will replace this table after validation on Sn
 
 ## Files
 - `app.py`: Streamlit UI and OCR pipeline
+- `.streamlit/config.toml`: app theme
 - `extract.py`: field extraction and ID masking
 - `requirements.txt`: dependencies
 
